@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>ลงทะเบียน</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <img class="imageTop" src="../../assets/imgs/login_top.png">
+
+  <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
+
+    <ion-item>
+      <div class="item-note" item-start>
+        <ion-icon name="person"></ion-icon>
+      </div>
+      <ion-input 
+        formControlName="firstName" 
+        type="text" 
+        placeholder="First Name"
+        [class.invalid]="!signupForm.controls.firstName.valid && signupForm.controls.firstName.dirty"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.firstName.valid  && signupForm.controls.firstName.dirty">
+      <p>Please enter First Name.</p>
+    </ion-item>
+
+    <ion-item>
+      <div class="item-note" item-start>
+        <ion-icon name="person"></ion-icon>
+      </div>
+      <ion-input 
+        formControlName="lastName" 
+        type="text" 
+        placeholder="Last Name"
+        [class.invalid]="!signupForm.controls.lastName.valid && signupForm.controls.lastName.dirty"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.lastName.valid  && signupForm.controls.lastName.dirty">
+      <p>Please enter Last Name.</p>
+    </ion-item>
+
+    <ion-item>
+      <div class="item-note" item-start>
+        <ion-icon name="email"></ion-icon>
+      </div>
+      <ion-input 
+        formControlName="email" 
+        type="text" 
+        placeholder="Email"
+        [class.invalid]="!signupForm.controls.email.valid && signupForm.controls.email.dirty"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.email.valid  && signupForm.controls.email.dirty">
+      <p>Please enter Email.</p>
+    </ion-item>
+
+    <ion-item>
+      <div class="item-note" item-start>
+        <ion-icon name="person"></ion-icon>
+      </div>
+      <ion-input 
+        formControlName="password" 
+        type="password" 
+        placeholder="Password"
+        [class.invalid]="!signupForm.controls.password.valid && signupForm.controls.password.dirty"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.password.valid  && signupForm.controls.password.dirty">
+      <p>Please enter Password.</p>
+    </ion-item>
+
+    <ion-item>
+      <div class="item-note" item-start>
+        <ion-icon name="person"></ion-icon>
+      </div>
+      <ion-input 
+        formControlName="retype" 
+        type="password" 
+        placeholder="Re Passpword"
+        [class.invalid]="!signupForm.controls.retype.valid && signupForm.controls.retype.dirty"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.retype.valid  && signupForm.controls.retype.dirty">
+      <p>Please enter Re Passpword.</p>
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col style="text-align: center">
+          <button ion-button center-all type="submit" [disabled]="!signupForm.valid">สร้างบัญชีใช้งาน</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</ion-content>
